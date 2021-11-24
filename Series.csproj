@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classe\EntidadeBase.cs" />
     <Compile Include="Classe\Serie.cs" />
+    <Compile Include="Classe\SerieRepositorio.cs" />
     <Compile Include="Enum\Genero.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Program.cs" />
