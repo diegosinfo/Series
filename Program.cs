@@ -144,8 +144,12 @@ namespace Series
             
             foreach(var serie in lista)
             {
-                Console.WriteLine("#ID {0}: - {1}", serie.RetornaId(), serie.RetornaTitulo());
-            }
+                if (serie.Excluido != true)
+                {
+                    Console.WriteLine("#ID {0}: - {1}", serie.RetornaId(), serie.RetornaTitulo());
+                }
+                
+             }
         }
 
         private static string ObterOpcaoUsuario()

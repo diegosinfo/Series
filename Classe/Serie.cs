@@ -15,7 +15,7 @@ namespace Series.Classe
 
         private int Ano { get; set; }
 
-        private bool Excluido { get; set; }
+        public bool Excluido { get; private set; }
 
 
         //Métodos
