@@ -33,7 +33,7 @@ namespace Series
                         break;
 
                     case "4":
-                        //ExcluirSerie();
+                        ExcluirSerie();
                         break;
 
                     case "5":
@@ -45,11 +45,40 @@ namespace Series
                         break;
 
                     default:
-                        throw new ArgumentOutOfRangeException();
+                        break;
                                            
                 }
                 opcaoUsuario = ObterOpcaoUsuario();
             }
+        }
+
+        private static void ExcluirSerie()
+        {
+            var lista = repositorio.Lista();
+
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Não existe series cadastradas ainda");
+                return;
+            }
+            
+            Console.WriteLine("Digite o id da série: ");
+            int indiceSerie = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Confirma a exclusão do serie ID: {0} - {1} : (S/N) ?", indiceSerie, repositorio.RetornaPorId(indiceSerie).RetornaTitulo());
+
+
+            string opcao;
+            do
+            {
+                opcao = Console.ReadLine().ToUpper();
+
+            } while (opcao != "N" && opcao != "S");
+
+            if (opcao == "N") return;
+
+
+            repositorio.Exclui(indiceSerie);
         }
 
         private static void AtualizarSerie()
