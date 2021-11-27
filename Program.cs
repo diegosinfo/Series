@@ -156,12 +156,8 @@ namespace Series
             
             foreach(var serie in lista)
             {
-                if (serie.Excluido != true)
-                {
-                    Console.WriteLine("#ID {0}: - {1}", serie.RetornaId(), serie.RetornaTitulo());
-                }
-                
-             }
+               Console.WriteLine("#ID {0}: - {1}{2}", serie.RetornaId(), serie.RetornaTitulo(), (serie.RetornaExcluido()? " -> Excluído" : ""));                
+            }
         }
 
         private static string ObterOpcaoUsuario()

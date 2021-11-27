@@ -15,7 +15,7 @@ namespace Series.Classe
 
         private int Ano { get; set; }
 
-        public bool Excluido { get; private set; }
+       private bool Excluido { get; set; }
 
 
         //Métodos
@@ -56,5 +56,11 @@ namespace Series.Classe
         {
             this.Excluido = true;
         }
+
+        public bool RetornaExcluido()
+        {
+            return this.Excluido;
+        }
+    
     }
 }
