@@ -37,7 +37,7 @@ namespace Series
                         break;
 
                     case "5":
-                        //VisualizarSerie();
+                        VisualizarSerie();
                         break;
 
                     case "C":
@@ -50,6 +50,18 @@ namespace Series
                 }
                 opcaoUsuario = ObterOpcaoUsuario();
             }
+        }
+
+        private static void VisualizarSerie()
+        {
+            Console.WriteLine("Digite o id da série: ");
+
+            int indiceSerie = -int.Parse(Console.ReadLine());
+
+            var serie = repositorio.RetornaPorId(indiceSerie);
+
+            Console.WriteLine(serie);
+
         }
 
         private static void ExcluirSerie()
